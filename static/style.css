@@ -149,10 +149,3 @@ label[for="file"]:hover {
     border-radius: 6px;
     margin-bottom: 15px;
 }
-
-.info-note {
-    font-size: 0.8em;
-    color: #95a5a6;
-    text-align: center;
-    margin-top: 20px;
-}
