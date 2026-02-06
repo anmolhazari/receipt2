@@ -17,7 +17,8 @@ class OCREngine:
         common_paths = [
             r'C:\Program Files\Tesseract-OCR\tesseract.exe',
             r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe',
-            os.path.expanduser(r'~\AppData\Local\Tesseract-OCR\tesseract.exe')
+            os.path.expanduser(r'~\AppData\Local\Tesseract-OCR\tesseract.exe'),
+            os.path.expanduser(r'~\AppData\Local\Programs\Tesseract-OCR\tesseract.exe')
         ]
 
         for path in common_paths:
