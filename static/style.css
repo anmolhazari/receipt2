@@ -1,0 +1,158 @@
+:root {
+    --primary-color: #2ecc71;
+    --secondary-color: #27ae60;
+    --bg-color: #f5f6fa;
+    --text-color: #2c3e50;
+    --card-bg: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify_content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.upload-section, .summary-card, .item-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.file-input-wrapper {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+label[for="file"] {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #e1e8ef;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+label[for="file"]:hover {
+    background-color: #d0d9e2;
+}
+
+.btn-primary {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.big-number {
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-align: center;
+    margin: 20px 0;
+}
+
+.unit {
+    font-size: 0.4em;
+    color: #7f8c8d;
+}
+
+.receipt-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #7f8c8d;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.item-card {
+    border-left: 5px solid #ddd;
+}
+
+.category-food { border-left-color: #f1c40f; }
+.category-clothing { border-left-color: #9b59b6; }
+.category-electronics { border-left-color: #3498db; }
+.category-transport { border-left-color: #e74c3c; }
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.badge {
+    background: #eee;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+.alternatives {
+    margin-top: 10px;
+    background: #e8f8f5;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.9em;
+}
+
+.alternatives ul {
+    margin: 5px 0 0 20px;
+    padding: 0;
+}
+
+.alert {
+    background: #ffeba7;
+    color: #8a6d3b;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.info-note {
+    font-size: 0.8em;
+    color: #95a5a6;
+    text-align: center;
+    margin-top: 20px;
+}

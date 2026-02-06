@@ -1,0 +1,44 @@
+{
+  "food": {
+    "beef": 60.0,
+    "chicken": 6.0,
+    "pork": 7.0,
+    "fish": 5.0,
+    "vegetables": 0.5,
+    "fruit": 0.9,
+    "apple": 0.4,
+    "banana": 0.7,
+    "orange": 0.5,
+    "rice": 4.0,
+    "bread": 1.2,
+    "milk": 3.0,
+    "cheese": 21.0,
+    "eggs": 4.5,
+    "chocolate": 19.0,
+    "coffee": 17.0
+  },
+  "clothing": {
+    "t-shirt": 2.1,
+    "jeans": 33.4,
+    "shoes": 14.0,
+    "jacket": 18.0,
+    "dress": 15.0
+  },
+  "electronics": {
+    "laptop": 300.0,
+    "smartphone": 60.0,
+    "monitor": 150.0,
+    "headphones": 10.0
+  },
+  "transport": {
+    "gasoline_liter": 2.3,
+    "diesel_liter": 2.7
+  },
+  "defaults": {
+    "food": 2.0,
+    "clothing": 10.0,
+    "electronics": 50.0,
+    "transport": 2.3,
+    "other": 1.0
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "receipt_details": {
+      "type": "object",
+      "properties": {
+        "vendor": { "type": "string" },
+        "date": { "type": "string", "format": "date" },
+        "total_price": { "type": "number" },
+        "currency": { "type": "string" }
+      },
+      "required": ["vendor", "date", "total_price"]
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "quantity": { "type": "number" },
+          "price": { "type": "number" },
+          "category": { "type": "string", "enum": ["food", "transport", "clothing", "electronics", "other"] },
+          "carbon_footprint_kg_co2e": { "type": "number" },
+          "assumptions": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string" },
+                "carbon_saving_kg_co2e": { "type": "number" },
+                "reason": { "type": "string" }
+              },
+              "required": ["name", "carbon_saving_kg_co2e", "reason"]
+            }
+          }
+        },
+        "required": ["name", "quantity", "price", "category", "carbon_footprint_kg_co2e"]
+      }
+    },
+    "total_carbon_footprint_kg_co2e": { "type": "number" },
+    "analysis_summary": { "type": "string" }
+  },
+  "required": ["receipt_details", "items", "total_carbon_footprint_kg_co2e"]
+}

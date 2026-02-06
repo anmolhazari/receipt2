@@ -1,0 +1,11 @@
+SuperMart
+123 Green Way
+Date: 2023-10-27
+
+2 x Beef Steak 25.00
+1 x T-shirt 15.00
+5.00 Apples 3.50
+1 Laptop 999.00
+Milk 4.00
+
+Total: 1046.50

@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Flask
+instance/
+.webassets-cache
+
+# Tesseract
+Tesseract-OCR/
+tesseract_installer.exe
+
+# VS Code
+.vscode/
+
+# Project specific
+uploads/
+*.log

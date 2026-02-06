@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result - Eco Receipt Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container result-container">
+        <header>
+            <h1>Analysis Result</h1>
+            <a href="/" class="back-link">← Analyze Another Receipt</a>
+        </header>
+
+        <div class="summary-card">
+            <h2>Total Carbon Footprint</h2>
+            <div class="big-number">{{ result.total_carbon_footprint_kg_co2e }} <span class="unit">kg CO₂e</span></div>
+            <p class="summary-text">{{ result.analysis_summary }}</p>
+            <div class="receipt-meta">
+                <span><strong>Vendor:</strong> {{ result.receipt_details.vendor }}</span>
+                <span><strong>Date:</strong> {{ result.receipt_details.date }}</span>
+                <span><strong>Total:</strong> {{ result.receipt_details.total_price }} {{ result.receipt_details.currency }}</span>
+            </div>
+        </div>
+
+        <div class="items-list">
+            <h3>Item Breakdown</h3>
+            {% for item in result.items %}
+            <div class="item-card category-{{ item.category }}">
+                <div class="item-header">
+                    <span class="item-name">{{ item.quantity }}x {{ item.name }}</span>
+                    <span class="item-footprint">{{ item.carbon_footprint_kg_co2e }} kg CO₂e</span>
+                </div>
+                <div class="item-details">
+                    <span class="badge">{{ item.category }}</span>
+                    {% if item.alternatives %}
+                    <div class="alternatives">
+                        <strong>🌱 Better Alternative:</strong>
+                        <ul>
+                            {% for alt in item.alternatives %}
+                            <li>{{ alt.name }} (Save {{ alt.carbon_saving_kg_co2e }} kg CO₂e) - {{ alt.reason }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="raw-text-section">
+            <details>
+                <summary>View Raw OCR Text</summary>
+                <pre>{{ result.raw_text }}</pre>
+            </details>
+        </div>
+    </div>
+</body>
+</html>
