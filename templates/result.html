@@ -26,27 +26,31 @@
 
         <div class="items-list">
             <h3>Item Breakdown</h3>
-            {% for item in result.items %}
-            <div class="item-card category-{{ item.category }}">
-                <div class="item-header">
-                    <span class="item-name">{{ item.quantity }}x {{ item.name }}</span>
-                    <span class="item-footprint">{{ item.carbon_footprint_kg_co2e }} kg CO₂e</span>
-                </div>
-                <div class="item-details">
-                    <span class="badge">{{ item.category }}</span>
-                    {% if item.alternatives %}
-                    <div class="alternatives">
-                        <strong>🌱 Better Alternative:</strong>
-                        <ul>
-                            {% for alt in item.alternatives %}
-                            <li>{{ alt.name }} (Save {{ alt.carbon_saving_kg_co2e }} kg CO₂e) - {{ alt.reason }}</li>
-                            {% endfor %}
-                        </ul>
+            {% if result.items %}
+                {% for item in result.items %}
+                <div class="item-card category-{{ item.category }}">
+                    <div class="item-header">
+                        <span class="item-name">{{ item.quantity }}x {{ item.name }}</span>
+                        <span class="item-footprint">{{ item.carbon_footprint_kg_co2e }} kg CO₂e</span>
                     </div>
-                    {% endif %}
+                    <div class="item-details">
+                        <span class="badge">{{ item.category }}</span>
+                        {% if item.alternatives %}
+                        <div class="alternatives">
+                            <strong>🌱 Better Alternative:</strong>
+                            <ul>
+                                {% for alt in item.alternatives %}
+                                <li>{{ alt.name }} (Save {{ alt.carbon_saving_kg_co2e }} kg CO₂e) - {{ alt.reason }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-            {% endfor %}
+                {% endfor %}
+            {% else %}
+                <p>No items detected in this receipt.</p>
+            {% endif %}
         </div>
         
         <div class="raw-text-section">

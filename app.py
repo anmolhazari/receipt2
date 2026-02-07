@@ -53,7 +53,12 @@ def index():
             enriched_items = []
             total_footprint = 0.0
             
-            for item in parsed_data['items']:
+            # Ensure items is a list
+            items = parsed_data.get('items', [])
+            if items is None:
+                items = []
+                
+            for item in items:
                 analysis = estimator.estimate_item(
                     name=item['name'],
                     quantity=item['quantity'],
@@ -70,10 +75,10 @@ def index():
 
             result = {
                 "receipt_details": {
-                    "vendor": parsed_data['vendor'],
-                    "date": parsed_data['date'],
-                    "total_price": parsed_data['total_price'],
-                    "currency": parsed_data['currency']
+                    "vendor": parsed_data.get('vendor'),
+                    "date": parsed_data.get('date'),
+                    "total_price": parsed_data.get('total_price'),
+                    "currency": parsed_data.get('currency')
                 },
                 "items": enriched_items,
                 "total_carbon_footprint_kg_co2e": round(total_footprint, 2),
